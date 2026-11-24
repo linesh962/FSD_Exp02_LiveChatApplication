@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Chat</title>
+  <link rel="stylesheet" href="liveChatApplication.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <!-- Conversation list -->
+    <aside class="sidebar" aria-label="Conversations">
+      <header class="sidebar-head">
+        <h1>Messages</h1>
+        <input type="search" id="search" placeholder="Search people" aria-label="Search people">
+      </header>
+      <ul class="contact-list" id="contactList"></ul>
+    </aside>
+
+    <!-- Active conversation -->
+    <main class="chat" aria-label="Chat">
+      <header class="chat-head">
+        <button class="back-btn" id="backBtn" aria-label="Back to conversations">&#8592;</button>
+        <div class="avatar" id="chatAvatar"></div>
+        <div class="chat-title">
+          <strong id="chatName"></strong>
+          <span id="chatStatus"></span>
+        </div>
+        <button class="clear-btn" id="clearBtn">Clear chat</button>
+      </header>
+
+      <div class="messages" id="messages" aria-live="polite"></div>
+
+      <form class="composer" id="composer" autocomplete="off">
+        <textarea id="input" rows="1" placeholder="Write a message" aria-label="Message"></textarea>
+        <button type="submit" id="sendBtn" disabled>Send</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="liveChatApplication.js"></script>
+</body>
+</html>
